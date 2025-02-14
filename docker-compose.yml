@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  app:
+    image: employeemanagement:1.0
+    container_name: employee_management
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      JAVA_OPTS: "-Xmx512m"
+      SPRING_REDIS_HOST: redis
+    depends_on:
+      - redis
+    restart: always
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+    restart: always
