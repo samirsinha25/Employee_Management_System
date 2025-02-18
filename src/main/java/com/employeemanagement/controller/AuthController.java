@@ -15,7 +15,7 @@ import com.employeemanagement.secret.util.JwtUtil;
 @RequestMapping("/api/auth")
 public class AuthController {
 
-	  private final AuthenticationManager authenticationManager;
+	    private final AuthenticationManager authenticationManager;
 	    private final JwtUtil jwtUtil;
 	    private final UserDetailsService userDetailsService;
 
